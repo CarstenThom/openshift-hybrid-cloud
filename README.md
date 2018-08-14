@@ -1,6 +1,6 @@
 # openshift-inventory
-pattern: 
-dev-data-center, bare-metall, centos, openshift (Okd|Origin), private prep-script (forked from https://github.com/gshipley/installcentos )
+hybrid cloud pattern: 
+dev-data-center, local, bare-metal (lenovo), centos, openshift (Okd|Origin), private prep-script (forked from https://github.com/gshipley/installcentos ), ManageIQ | CloudForms
 
 master-branch: 
 current dev-version
