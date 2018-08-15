@@ -16,8 +16,10 @@ alm:
   replicaCount: 1
   # The image to run. If not building a local image, use sha256 image references
   image:
-    ref: quay.io/coreos/olm@sha256:d2e51372b3251321c38d2159e8060fe0bf2f3eeb60a4a3cd53fbee3e1cdd5756
     # 0.6.0
+    ref: quay.io/coreos/olm@sha256:d2e51372b3251321c38d2159e8060fe0bf2f3eeb60a4a3cd53fbee3e1cdd5756
+    # 0.6.0-rhel
+    #ref: quay.io/coreos/olm@sha256:44b445850b3e612c062424c3727bb85048ec8e71407b39985786d29aa20f5c79
     pullPolicy: IfNotPresent
   service:
     # port for readiness/liveness probes
@@ -29,8 +31,10 @@ catalog:
   replicaCount: 1
   # The image to run. If not building a local image, use sha256 image references
   image:
-    ref: quay.io/coreos/catalog@sha256:cc60359f7fdeaf71e4d989b470dd8c35c693756b5f24485b0f3df6612a730101
     # 0.6.0
+    ref: quay.io/coreos/catalog@sha256:cc60359f7fdeaf71e4d989b470dd8c35c693756b5f24485b0f3df6612a730101
+    # 0.6.0-rhel
+    #ref: quay.io/coreos/catalog@sha256:20886d49205aa8d8fd53f1c85fad6a501775226da25ef14f51258b7066e91064
     pullPolicy: IfNotPresent
   service:
     # port for readiness/liveness probes
