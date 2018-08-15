@@ -1,14 +1,17 @@
 # sets the apiversion to use for rbac-resources. Change to `authorization.openshift.io` for openshift
 #rbacApiVersion: rbac.authorization.k8s.io
 rbacApiVersion: authorization.openshift.io
+
 # namespace is the namespace the operators will _run_
-namespace: openshift
+namespace: operator-lifecycle-manager
+
 # watchedNamespaces is a comma-separated list of namespaces the operators will _watch_ for OLM resources.
 # Omit to enable OLM in all namespaces
-watchedNamespaces: openshift
+#watchedNamespaces: openshift,operator-lifecycle-manager
+
 # catalog_namespace is the namespace where the catalog operator will look for global catalogs.
 # entries in global catalogs can be resolved in any watched namespace
-catalog_namespace: openshift
+catalog_namespace: operator-lifecycle-manager
 
 # OLM operator run configuration
 alm:
@@ -39,19 +42,8 @@ catalog:
   service:
     # port for readiness/liveness probes
     internalPort: 8080
-
-# alm service broker run configuration
-servicebroker:
-  # OLM Service Broker doesn't need to be HA; scale with load
-  replicaCount: 1
-  image:
-    ref: quay.io/coreos/olm-service-broker:openshift
-    pullPolicy: IfNotPresent
-  service:
-    # port for readiness/liveness probes
-    internalPort: 8080
-    # port exposing OLM's service broker API
-    brokerPort: 8005
+catalog_sources:
+- ocs
 
 # To configure a release of OLM for installation in a cluster:
 # Create a my-values.yaml like the example above with the desired configuration or choose an existing one from this repository. The latest production values can be found in deploy/tectonic-alm-operator/values.yaml.
